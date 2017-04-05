@@ -1,0 +1,41 @@
+BackendBundle\Entity\Clientes:
+    type: entity
+    table: clientes
+    uniqueConstraints:
+        clientes_uniques_fields:
+            columns:
+                - rut
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        rut:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        nombre:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        domicilio:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        tipo:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

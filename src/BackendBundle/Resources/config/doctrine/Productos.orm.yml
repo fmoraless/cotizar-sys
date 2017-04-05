@@ -1,0 +1,35 @@
+BackendBundle\Entity\Productos:
+    type: entity
+    table: productos
+    uniqueConstraints:
+        productos_uniques_fields:
+            columns:
+                - nparte
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nparte:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        descripcion:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        precio:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+    lifecycleCallbacks: {  }

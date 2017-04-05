@@ -1,0 +1,69 @@
+BackendBundle\Entity\Cotizaciones:
+    type: entity
+    table: cotizaciones
+    indexes:
+        user_id_idx:
+            columns:
+                - user_id
+        persona_id_idx:
+            columns:
+                - persona_id
+        cliente_id_idx:
+            columns:
+                - cliente_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        iva:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+        total:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+    manyToOne:
+        cliente:
+            targetEntity: Clientes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cliente_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        persona:
+            targetEntity: Personas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                persona_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        user:
+            targetEntity: Users
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

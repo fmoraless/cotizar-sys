@@ -1,0 +1,52 @@
+BackendBundle\Entity\CotDetalle:
+    type: entity
+    table: cot_detalle
+    indexes:
+        producto_id_idx:
+            columns:
+                - producto_id
+        cotizacion_id_idx:
+            columns:
+                - cotizacion_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        cantidad:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        neto:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    manyToOne:
+        cotizacion:
+            targetEntity: Cotizaciones
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cotizacion_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        producto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                producto_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
