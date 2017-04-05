@@ -1,6 +1,10 @@
-BackendBundle\Entity\Personas:
+BackendBundle\Entity\Cliente:
     type: entity
-    table: personas
+    table: clientes
+    uniqueConstraints:
+        clientes_uniques_fields:
+            columns:
+                - rut
     id:
         id:
             type: integer
@@ -11,19 +15,25 @@ BackendBundle\Entity\Personas:
             generator:
                 strategy: IDENTITY
     fields:
+        rut:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
         nombre:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-        apellido:
+        domicilio:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-        correo:
+        tipo:
             type: integer
             nullable: true
             options:

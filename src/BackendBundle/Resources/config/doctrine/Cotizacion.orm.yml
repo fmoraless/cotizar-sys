@@ -1,4 +1,4 @@
-BackendBundle\Entity\Cotizaciones:
+BackendBundle\Entity\Cotizacion:
     type: entity
     table: cotizaciones
     indexes:
@@ -37,7 +37,7 @@ BackendBundle\Entity\Cotizaciones:
             column: created_at
     manyToOne:
         cliente:
-            targetEntity: Clientes
+            targetEntity: Cliente
             cascade: {  }
             fetch: LAZY
             mappedBy: null
@@ -47,7 +47,7 @@ BackendBundle\Entity\Cotizaciones:
                     referencedColumnName: id
             orphanRemoval: false
         persona:
-            targetEntity: Personas
+            targetEntity: Persona
             cascade: {  }
             fetch: LAZY
             mappedBy: null
@@ -57,7 +57,7 @@ BackendBundle\Entity\Cotizaciones:
                     referencedColumnName: id
             orphanRemoval: false
         user:
-            targetEntity: Users
+            targetEntity: User
             cascade: {  }
             fetch: LAZY
             mappedBy: null

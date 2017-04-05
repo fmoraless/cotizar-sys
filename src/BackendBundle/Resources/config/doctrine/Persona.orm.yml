@@ -1,10 +1,6 @@
-BackendBundle\Entity\Productos:
+BackendBundle\Entity\Persona:
     type: entity
-    table: productos
-    uniqueConstraints:
-        productos_uniques_fields:
-            columns:
-                - nparte
+    table: personas
     id:
         id:
             type: integer
@@ -15,21 +11,21 @@ BackendBundle\Entity\Productos:
             generator:
                 strategy: IDENTITY
     fields:
-        nparte:
+        nombre:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-        descripcion:
+        apellido:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-        precio:
-            type: decimal
+        correo:
+            type: integer
             nullable: true
-            precision: 10
-            scale: 0
+            options:
+                unsigned: false
     lifecycleCallbacks: {  }

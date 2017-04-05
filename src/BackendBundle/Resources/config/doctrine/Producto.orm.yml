@@ -1,10 +1,10 @@
-BackendBundle\Entity\Clientes:
+BackendBundle\Entity\Producto:
     type: entity
-    table: clientes
+    table: productos
     uniqueConstraints:
-        clientes_uniques_fields:
+        productos_uniques_fields:
             columns:
-                - rut
+                - nparte
     id:
         id:
             type: integer
@@ -15,27 +15,21 @@ BackendBundle\Entity\Clientes:
             generator:
                 strategy: IDENTITY
     fields:
-        rut:
+        nparte:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-        nombre:
+        descripcion:
             type: string
             nullable: true
             length: 255
             options:
                 fixed: false
-        domicilio:
-            type: string
+        precio:
+            type: decimal
             nullable: true
-            length: 255
-            options:
-                fixed: false
-        tipo:
-            type: integer
-            nullable: true
-            options:
-                unsigned: false
+            precision: 10
+            scale: 0
     lifecycleCallbacks: {  }

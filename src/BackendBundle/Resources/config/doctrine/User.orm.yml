@@ -1,4 +1,4 @@
-BackendBundle\Entity\Users:
+BackendBundle\Entity\User:
     type: entity
     table: users
     uniqueConstraints:

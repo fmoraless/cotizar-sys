@@ -30,7 +30,7 @@ BackendBundle\Entity\CotDetalle:
                 unsigned: false
     manyToOne:
         cotizacion:
-            targetEntity: Cotizaciones
+            targetEntity: Cotizacion
             cascade: {  }
             fetch: LAZY
             mappedBy: null
@@ -40,7 +40,7 @@ BackendBundle\Entity\CotDetalle:
                     referencedColumnName: id
             orphanRemoval: false
         producto:
-            targetEntity: Productos
+            targetEntity: Producto
             cascade: {  }
             fetch: LAZY
             mappedBy: null
