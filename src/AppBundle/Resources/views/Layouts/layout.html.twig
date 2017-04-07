@@ -7,11 +7,14 @@
 		</title>
 		
 			{% block stylesheets %}
-				<!-- Hojas de estilos -->
+				<link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+                <link href="{{ asset('assets/css/bootstrap.cosmo.min.css') }}" type="text/css" rel="stylesheet" />
+                <link href="{{ asset('assets/css/styles.css') }}" type="text/css" rel="stylesheet" />
 			{% endblock %}
 			
 			{% block javascripts %}
-				<!-- Hojas de estilos -->
+				<script src="{{ asset('assets/js/jquery.min.css') }}"></script>
+                <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
 			{% endblock %}
 	</head>
 	<body>
