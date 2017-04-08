@@ -21,6 +21,33 @@ class UserController extends Controller{
 		$user = new User();
 		$form = $this->createForm(RegisterType::class, $user);
 		
+        $form->handleRequest($request);
+        if($form->isSubmitted()){
+            if($form->isValid()){
+                $em = $this->getDoctrine()->getManager();
+                //$user_repo = $em->getRepository("BackendBundle:User");
+                
+                $query = $em->createQuery('SELECT u FROM BackendBundle:User u WHERE u.email = :email OR u.nick = :nick')
+                        ->setParameter('email', $form->get("email")->getData())
+                        ->setParameter('nick', $form->get("nick")->getData());
+                
+                $user_isset = $query->getResult();
+                
+                if(count($user_isset) == 0){
+                    $factory = $this->get("security.encoder_factory");
+                    $encoder = $factory->getEncoder($user);
+                    
+                    $password = $encoder->encodePassword($form->get("password")->getData(), $user->getSalt())
+                }else{
+                    $status = "El usuario ya existe !!";
+                    
+                }
+                
+            }else{
+                $status = "No te has registrado correctamente";
+            }
+        }
+        
         return $this->render('AppBundle:User:register.html.twig', array(
 			"form" => $form->createView()
 		));
