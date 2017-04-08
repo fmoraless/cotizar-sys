@@ -1,4 +1,4 @@
-/*GENERALES*/
+/* GENERALES */
 body{
     background: #eee;
 }
@@ -19,7 +19,7 @@ body{
     height: 100%;
     text-align: center;
 }
-/* REGISTRO */
+/* -REGISTRO- */
 .box-form{
     background: white;
     border: 1px solid #ccc;
