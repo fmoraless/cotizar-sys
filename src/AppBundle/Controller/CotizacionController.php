@@ -10,7 +10,6 @@ class CotizacionController extends Controller{
     
     public function indexAction(Request $request){
         
-        echo "Accion de index Cotizacion";
-        die();
+        return $this->render('AppBundle:Cotizacion:home.html.twig');
     }
 }
