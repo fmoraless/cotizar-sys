@@ -107,9 +107,11 @@ class UserController extends Controller{
     }
 	
 	public function editUserAction(Request $request) {
-				
+		$user = $this->getUser();
+        $form = $this->createForm(UserType::class, $user);
+        
 		return $this->render('AppBundle:User:edit_user.html.twig', array(
-			
+			"form" => $form->createView()
 		));
 	}
 }
