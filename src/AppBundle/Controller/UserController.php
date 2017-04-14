@@ -129,7 +129,7 @@ class UserController extends Controller {
                         $ext = $file->guessExtension();
                         if($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' || $ext == 'gif'){
                             $file_name = $user->getId().time().time().'.'.$ext;
-                            $file->move("upload/users", $file_name);
+                            $file->move("uploads/users", $file_name);
                             
                             $user->setImage($file_name);
                         }
