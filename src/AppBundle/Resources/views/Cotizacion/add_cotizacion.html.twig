@@ -1,0 +1,16 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block content %}
+
+    <div class="col-lg-10 box-form">
+        
+        <center><h2>Cotizaciòn</h2></center>
+        </hr>
+        
+        {{form_start(form, {'action':'', 'method':'POST'})}}
+        {{form_errors (form)}}
+        {{form_end(form)}}
+        
+        
+    </div>
+
+{% endblock %}

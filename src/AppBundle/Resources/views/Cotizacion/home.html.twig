@@ -1,5 +1,22 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
-  
+
 {% block content %}
-	texto de prueba de cotizaciones
+    <div class="container">
+        <div class="col-lg-7 box-default timeline">
+            <h1>Cotizaciones</h1>
+            </hr>
+            <div class="box-content">
+                COTIZACIONES LIST
+            </div>
+        </div>
+        <div id="user-card" class="col-lg-4 pull-left box-default">
+            <div class="avatar">
+                {% if app.user.image == null %}
+                    <img src="{{ asset('assets/images/default.png') }}" />
+                {%else%}
+                    <img src="{{ asset('uploads/users/'~app.user.image) }}" />
+                {%endif%}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,3 +1,7 @@
 home_cotizaciones:
     path: /home
     defaults: { _controller: AppBundle:Cotizacion:index }
+
+add_cotizacion:
+    path: /add_cotizacion
+    defaults: { _controller: AppBundle:Cotizacion:addCotizacion }
